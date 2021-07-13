@@ -5,7 +5,7 @@
 /*HEADER*/
 
 header {
-    background: url(../images/fondo-header.jpg);
+    background: url(../images/fondo-header.jpg) no-repeat;
     background-size: cover;
     background-position: bottom;
 }

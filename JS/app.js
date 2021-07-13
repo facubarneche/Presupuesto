@@ -107,21 +107,21 @@ const sumaLista = ({ agregar, tipo, text }) => {
     if (text === 'Egresos') {
         for (const i in tipo) {
             agregar.innerHTML += `
-    <tr>
+    <tr onmouseover = 'mostrarCesto(this)' onmouseout = 'mostrarCesto(this)'>
         <td>${tipo[i].descripcion}</td>
         <td class="text-end pe-4 dinero" >${formatoMoneda(Number(tipo[i].monto))}</td>
         <td><span class="porcentaje-egresos" title="Porcentaje respecto todos sus egresos">${formatoPorcentaje(tipo[i].monto / montoTotal)}</span></td>
-        <td><i class="far fa-trash-alt borrar" title="Eliminar Egreso" id="${tipo[i].id}" onclick='eliminarEgreso(${tipo[i].id})' hidden></i></td>
+        <td hidden><i class="far fa-trash-alt borrar" title="Eliminar Egreso" id="${tipo[i].id}"  onclick='eliminarEgreso(${tipo[i].id})'></i></td>
     </tr>`;
         }
     }
     else {
         for (const i in tipo) {
             agregar.innerHTML += `
-    <tr>
+    <tr onmouseover = 'mostrarCesto(this)' onmouseout = 'mostrarCesto(this)'>
         <td>${tipo[i].descripcion}</td>
         <td class="text-end pe-4 dinero">${formatoMoneda(Number(tipo[i].monto))}</td>
-        <td><i class="far fa-trash-alt borrar" title="Eliminar Ingreso" id="${tipo[i].id}"  onclick='eliminarIngreso(${tipo[i].id})' hidden></i></td>
+        <td hidden><i class="far fa-trash-alt borrar" title="Eliminar Ingreso" id="${tipo[i].id}"  onclick='eliminarIngreso(${tipo[i].id})'></i></td>
     </tr>`;
         }
     }
@@ -137,8 +137,8 @@ const formatoPorcentaje = (porcentaje) => {
 }
 
 //Permite visibilisar el cesto de basura
-const mostrarCesto = (tr) => {
-    return console.log(tr)
+const mostrarCesto = (id) => {
+    return id.lastElementChild.toggleAttribute('hidden');
 }
 //Obtiene el porcentaje total de egresos
 const obtenerPorcentaje = ({ ingresos, egresos }) => {
@@ -201,4 +201,3 @@ agregar.addEventListener('click', () => {
     disponible();
     inputClean();
 })
-
