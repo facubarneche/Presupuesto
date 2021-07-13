@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Estilos CSS-->
+    <link rel="stylesheet" href="CSS/style.css">
+    <!--Bootstrap 5-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--Fontawesome ICONOS-->
+    <script src="https://kit.fontawesome.com/f4a5746b1a.js" crossorigin="anonymous"></script>
+    <title>Presupuesto 2</title>
+</head>
+
+<body>
+    <!--Header-->
+    <header>
+        <div class="container text-center p-4">
+            <div class="text-white">
+                <h1>Presupuesto Disponible:</h1>
+                <div class="display-6 m-3" id="disponible">$0.00</div>
+            </div>
+            <div class="div-ingresos d-flex m-auto bg-success text-white py-2 px-5 mt-5">
+                <h3 class="my-auto fw-bolder">Ingresos</h3>
+                <div>
+                    <div class="ingresos my-auto fw-bolder" id="ingresoTotal">$0.00</div>
+                    <span class="text-success">0.00%</span>
+                </div>
+            </div>
+            <div>
+                <div class="div-ingresos d-flex m-auto bg-danger text-white py-2 px-5 mt-2">
+                    <h3 class="my-auto fw-bolder">Egresos</h3>
+                    <div class="div-ingreso-porcentaje">
+                        <div class="ingresos my-auto fw-bolder" id="egresoTotal">$0.00</div>
+                        <span><small class="small-porcentaje" id="porcentaje" title="Porcentaje total de los egresos respecto a los ingresos">0.00%</small></span>
+                    </div>
+                </div>
+                <div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--Form-->
+    <form class="text-center p-3">
+        <select id="operacion" class=" m-1 p-2">
+            <option value="+">+</option>
+            <option value="-">-</option>
+        </select>
+
+        <input type="text" class="desc m-1 p-2" placeholder="Agregar Descripción" id="desc" autofocus>
+        <input type="number" class="valor m-1 p-2" placeholder="Valor" id="valor" >
+        <button type="button" class="btn btn-secondary p-0 border-0 bg-transparent" id="agregar">
+            <i class="far fa-check-circle" title="Agregar"></i>
+        </button>
+        <button type="button" class="btn btn-secondary ms-3 p-0 border-0 bg-transparent" id="borrarTodo"><i class="fas fa-trash" title="Borrar Todo" ></i></button>
+    </form>
+
+    <!--Lists-->
+    <div class="super-contenedor-listas text-center">
+        <div class="container contenedor-listas">
+            <div class="tabla-ingresos text-success text-start">
+                <table class="w-100" id="agregar-ingresos">
+                    <tr>
+                        <th>Ingresos</th>
+                    </tr>
+                </table>
+            </div>
+            <div class="tabla-egresos text-danger text-start">
+                <table class="w-100" id="agregar-egresos">
+                    <tr>
+                        <th>Egresos</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Scripts-->
+    <script src="JS/app.js"></script>
+</body>
+
+</html>
