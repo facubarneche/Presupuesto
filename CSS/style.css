@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 /*HEADER*/
 
@@ -21,7 +21,7 @@ header {
     padding: 20px;
 }
 
-.small-porcentaje{
+.small-porcentaje {
     background: rgb(241, 96, 96);
     padding: 3px;
     border-radius: 5px;
@@ -31,7 +31,7 @@ header {
     -o-border-radius: 5px;
 }
 
-.porcentaje-egresos{
+.porcentaje-egresos {
     font-size: 12px;
     background: rgb(248, 204, 204);
     padding: 3px;
@@ -43,36 +43,36 @@ header {
 }
 /*FORM*/
 
-form{
+form {
     background: gainsboro;
 }
 
-.desc{
+.desc {
     width: 25rem;
 }
-.valor{
+.valor {
     width: 10rem;
 }
 
-button{
+button {
     background: transparent;
     border: 1px solid transparent;
-    
 }
 
-button i{
+button i {
     color: gray;
     font-size: 30px;
 }
 
 /*TABLAS*/
 
-.super-contenedor-listas{
+.super-contenedor-listas {
     background: rgb(203, 195, 255);
     min-height: 40vh;
 }
 
-.tabla-ingresos, .tabla-egresos{
+.tabla-ingresos,
+.tabla-egresos {
     display: inline-flex;
     margin: 20px;
     padding: 5px;
@@ -80,8 +80,31 @@ button i{
     box-shadow: 2px 3px 2px;
     width: 40%;
 }
-td{
+td {
     border-top: 1px solid gray !important;
     padding: 6px 2px;
 }
 
+@media (max-width: 576px) {
+    .div-ingresos {
+        width: 100%;
+    }
+    
+    .desc{
+        width: 70%;
+    }
+
+    .super-contenedor-listas {
+        display: block;
+        min-height: 50vh;
+        padding-top: 20px
+    }
+
+    .tabla-ingresos, .tabla-egresos {
+    display: block;
+    margin: 20px 0px;
+    padding: 5px;
+    width: 100%;
+}
+
+}
