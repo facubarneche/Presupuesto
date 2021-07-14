@@ -10,15 +10,12 @@ class Dato {
     get descripcion() {
         return this._descripcion;
     }
-
     set descripcion(descripcion) {
         this._descripcion = descripcion;
     }
-
     get monto() {
         return this._monto;
     }
-
     set monto(monto) {
         this._monto = monto;
     }
@@ -96,8 +93,8 @@ const sumaLista = ({ agregar, tipo, text }) => {
     agregarIngresos = document.getElementById('agregar-ingresos');
     let montoTotal = 0;
 
-    tipo.forEach(e => {
-        montoTotal += Number(e.monto);
+    tipo.forEach(element => {
+        montoTotal += Number(element.monto);
     });
 
     agregar.innerHTML = ` 

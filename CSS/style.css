@@ -85,26 +85,28 @@ td {
     padding: 6px 2px;
 }
 
-@media (max-width: 576px) {
+/* Media Querys */
+
+@media (max-width: 768px) {
     .div-ingresos {
         width: 100%;
     }
-    
-    .desc{
+
+    .desc {
         width: 70%;
     }
 
     .super-contenedor-listas {
         display: block;
         min-height: 50vh;
-        padding-top: 20px
+        padding: 20px 0px;
     }
 
-    .tabla-ingresos, .tabla-egresos {
-    display: block;
-    margin: 20px 0px;
-    padding: 5px;
-    width: 100%;
-}
-
+    .tabla-ingresos,
+    .tabla-egresos {
+        display: block;
+        margin: 20px 0px;
+        padding: 5px;
+        width: 100%;
+    }
 }
