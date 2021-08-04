@@ -118,7 +118,7 @@ const sumaLista = ({ agregar, tipo, text }) => {
     <tr onmouseover = 'mostrarCesto(this)' onmouseout = 'mostrarCesto(this)'>
         <td>${tipo[i].descripcion}</td>
         <td class="text-end pe-2 dinero">${formatoMoneda(Number(tipo[i].monto))}</td>
-        <td class="opacity"><i class="far fa-trash-alt borrar" title="Eliminar Ingreso" id="${tipo[i].id}"  onclick='eliminarIngreso(${tipo[i].id})'></i></td>
+        <td class="opacity text-center"><i class="far fa-trash-alt borrar" title="Eliminar Ingreso" id="${tipo[i].id}"  onclick='eliminarIngreso(${tipo[i].id})'></i></td>
     </tr>`;
         }
     }
