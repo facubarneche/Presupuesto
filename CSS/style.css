@@ -85,6 +85,10 @@ td {
     padding: 6px 2px;
 }
 
+.opacity{
+    opacity: 0;
+}
+
 /* Media Querys */
 
 @media (max-width: 768px) {

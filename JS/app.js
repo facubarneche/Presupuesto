@@ -106,9 +106,9 @@ const sumaLista = ({ agregar, tipo, text }) => {
             agregar.innerHTML += `
     <tr onmouseover = 'mostrarCesto(this)' onmouseout = 'mostrarCesto(this)'>
         <td>${tipo[i].descripcion}</td>
-        <td class="text-end pe-4 dinero" >${formatoMoneda(Number(tipo[i].monto))}</td>
-        <td><span class="porcentaje-egresos" title="Porcentaje respecto todos sus egresos">${formatoPorcentaje(tipo[i].monto / montoTotal)}</span></td>
-        <td hidden><i class="far fa-trash-alt borrar" title="Eliminar Egreso" id="${tipo[i].id}"  onclick='eliminarEgreso(${tipo[i].id})'></i></td>
+        <td class="text-end ps-5 pe-3 dinero" >${formatoMoneda(Number(tipo[i].monto))}</td>
+        <td><span class="porcentaje-egresos"  title="Porcentaje respecto todos sus egresos">${formatoPorcentaje(tipo[i].monto / montoTotal)}</span></td>
+        <td class="opacity"><i class="far fa-trash-alt borrar" title="Eliminar Egreso" id="${tipo[i].id}"  onclick='eliminarEgreso(${tipo[i].id})'></i></td>
     </tr>`;
         }
     }
@@ -117,8 +117,8 @@ const sumaLista = ({ agregar, tipo, text }) => {
             agregar.innerHTML += `
     <tr onmouseover = 'mostrarCesto(this)' onmouseout = 'mostrarCesto(this)'>
         <td>${tipo[i].descripcion}</td>
-        <td class="text-end pe-4 dinero">${formatoMoneda(Number(tipo[i].monto))}</td>
-        <td hidden><i class="far fa-trash-alt borrar" title="Eliminar Ingreso" id="${tipo[i].id}"  onclick='eliminarIngreso(${tipo[i].id})'></i></td>
+        <td class="text-end pe-2 dinero">${formatoMoneda(Number(tipo[i].monto))}</td>
+        <td class="opacity"><i class="far fa-trash-alt borrar" title="Eliminar Ingreso" id="${tipo[i].id}"  onclick='eliminarIngreso(${tipo[i].id})'></i></td>
     </tr>`;
         }
     }
@@ -135,7 +135,7 @@ const formatoPorcentaje = (porcentaje) => {
 
 //Permite visibilisar el cesto de basura
 const mostrarCesto = (id) => {
-    return id.lastElementChild.toggleAttribute('hidden');
+    return id.lastElementChild.classList.toggle('opacity');
 }
 //Obtiene el porcentaje total de egresos
 const obtenerPorcentaje = ({ ingresos, egresos }) => {
